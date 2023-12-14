@@ -1,24 +1,40 @@
 import { useState, useEffect } from "react"
-import { pedirDatos } from "../../utils/utils"
 import ItemList from "../ItemList/ItemList";
+import { pedirDatos } from "../../utils/utils"
+import {useParams} from "react-router-dom"
 
 
 const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    useEffect(()=>{
-        pedirDatos()
-            .then((data)=>{
-                setProductos(data)
+    const { categoryId } = useParams()
+    console.log(categoryId)
+
+    useEffect(() => {
+        setLoading(true)
+
+        pedirDatos() // <= Promise
+            .then((data) => {
+                const items = categoryId 
+                                ? data.filter(prod => prod.category === categoryId)
+                                : data
+
+                setProductos(items)
             })
-    }, [])
+            .finally(() => setLoading( false ))
+    }, [categoryId])
 
     return (
         <>
-            <ItemList productos={productos}/>
+
+            {loading ? (
+            <h2 className="text-center text-4xl mt-8">Cargando...</h2>
+            ) : (
+            <ItemList productos={productos} />
+            )}
         </>
-    )
-}
+    );
+};
 
-export default ItemListContainer
-
+export default ItemListContainer;
