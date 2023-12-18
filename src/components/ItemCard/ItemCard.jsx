@@ -4,7 +4,7 @@ import Boton from "../Boton/Boton";
 const ItemCard = ({item}) => {
 
     return (
-        <article className="w-80">
+        <article className="w-80 border-2 border-teal-600 p-3">
             <img src={item.img} alt={item.name} />
             <h3 className="text-2xl font-semibold">{item.name}</h3>
             <hr />

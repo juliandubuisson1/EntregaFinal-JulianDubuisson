@@ -9,31 +9,31 @@ const links = [
 },
 {
     label: "Mancuernas",
-    href: "/producto/mancuernas",
+    href: "/productos/mancuernas",
 },
 {
     label: "Cajon",
-    href: "/producto/cajon",
+    href: "/productos/cajon",
 },
 {
     label: "Barras",
-    href: "/producto/barras",
+    href: "/productos/barras",
 },
 {
-    label: "Kettblebells",
-    href: "/producto/kettlebells",
+    label: "Kettlebells",
+    href: "/productos/kettlebells",
 },
 {
     label: "Bandas",
-    href: "/producto/bandas",
+    href: "/productos/bandas",
 },
 {
     label: "Colchoneta",
-    href: "/producto/Colchoneta",
+    href: "/productos/colchoneta",
 },
 {
     label: "Disco",
-    href: "/producto/disco",
+    href: "/productos/disco",
 },
 
 ];

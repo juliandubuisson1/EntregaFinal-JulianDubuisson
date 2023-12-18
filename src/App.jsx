@@ -15,8 +15,10 @@ function App() {
         
         <Route path="/" element={ <ItemListContainer /> } />  
         <Route path="/productos/:categoryId" element={ <ItemListContainer />}/>
+
         <Route path="/item/:itemId" element={ <ItemDetailContainer /> } />
         <Route path="*" element={<Navigate to={"/not-found"}/> } />
+        
       </Routes>
     </BrowserRouter>
     
