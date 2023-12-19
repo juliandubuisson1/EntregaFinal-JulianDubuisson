@@ -1,4 +1,4 @@
-import logo from "../../assets/shoe.svg"
+import logo from "../../assets/mancuerna.svg"
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
@@ -10,6 +10,10 @@ const links = [
 {
     label: "Funcional",
     href: "/productos/funcional",
+},
+{
+    label: "Funcional",
+    href: "/productos/funcional/bandas",
 },
 {
     label: "Boxeo",
@@ -27,13 +31,13 @@ return (
     <header className="bg-teal-700 ">
         <div className="container m-auto py-6 flex justify-between items-center">
 
-            <img className="w-20" src={logo} alt="Logo" />
+            <img className="w-28" src={logo} alt="Logo" />
             <nav className="flex gap-4">
             {links.map((link) => (
                 <Link
                 key={link.href}
                 to={link.href}
-                className="text-stone-950 hover:text-white text-lg uppercase font-semibold"
+                className="text-stone-950 hover:text-white text-2xl uppercase font-semibold"
                 >
                 {link.label}
                 </Link>
