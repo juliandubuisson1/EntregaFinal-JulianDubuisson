@@ -1,4 +1,6 @@
+
 import Boton from "../Boton/Boton";
+
 
 
 const ItemDetail = ({ item }) => {
@@ -19,6 +21,6 @@ return (
         <Boton className="bg-green-400">Agregar al carrito</Boton>
     </div>
 );
-};
+}
 
 export default ItemDetail;

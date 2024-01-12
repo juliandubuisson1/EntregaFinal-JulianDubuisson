@@ -1,33 +1,46 @@
 import { useEffect, useState } from "react";
-import { pedirDatos } from "../../utils/utils";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import Loader from "../Loader/Loader";
+import { db } from "../../firebase/config";
+import { doc, getDoc } from "firebase/firestore";
+
 
 const ItemDetailContainer = () => {
-const [loading, setLoading] = useState(true);
-const [item, setItem] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [item, setItem] = useState(null);
 
-const { itemId } = useParams()
+    const { itemId } = useParams()
 
-useEffect(() => {
-    setLoading(true);
+    useEffect(() => {
+        setLoading(true);
 
-    pedirDatos()
-    .then((data) => {
-        setItem( data.find(prod => prod.id === Number(itemId)) )
-    })
-    .finally(() => setLoading(false));
-}, []);
+        // 1.- armar la referencia
+        const docRef = doc(db, 'productos', itemId)
+        // 2.- llamar a la ref
+        getDoc( docRef )
+        .then((docSnapshot) => {
+            console.log(docSnapshot)
+            const doc = {
+            ...docSnapshot.data(),
+            id: docSnapshot.id
+            }
 
-return (
-    <>
-    {loading ? (
-        <h2 className="text-center text-4xl mt-8">Cargando...</h2>
-    ) : (
-        <ItemDetail item={item}/>
-    )}
-    </>
-);
+            setItem(doc)
+        })
+        .finally(() => setLoading(false))
+
+    }, [itemId]);
+
+    return (
+        <>
+        {loading ? (
+            <Loader />
+        ) : (
+            <ItemDetail item={item}/>
+        )}
+        </>
+    );
 };
 
 export default ItemDetailContainer;

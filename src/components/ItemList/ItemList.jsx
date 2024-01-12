@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import ItemCard from "../ItemCard/ItemCard"
+
 
 const ItemList = ({productos}) => {
     
+
     return (
         <section className="container m-auto mt-8">
             <h2 className="container m-auto mt-8 text-4xl italic">Productos</h2>
