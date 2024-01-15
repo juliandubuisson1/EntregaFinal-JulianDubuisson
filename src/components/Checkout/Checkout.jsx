@@ -74,7 +74,7 @@ const handleSubmit = async (e) => {
 if (orderId) {
     return (
     <div className="container m-auto mt-10">
-        <h2 className="text-4xl font-semibold">Gracias por tu compra</h2>
+        <h2 className="text-4xl font-semibold bg-teal-600">Gracias por tu compra</h2>
         <hr />
         <p>Tu código de orden es: {orderId}</p>
     </div>
@@ -86,7 +86,7 @@ return (
         <h2 className="text-4xl font-semibold">Checkout</h2>
         <hr />
 
-        <h4>Ingresta tus datos:</h4>
+        <h4>Ingresa tus datos:</h4>
         <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-4 max-w-md mt-4"

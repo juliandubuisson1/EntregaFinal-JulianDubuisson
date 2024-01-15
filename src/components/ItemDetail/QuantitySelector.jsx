@@ -1,4 +1,4 @@
-import Boton from "../Boton/Boton"
+import Boton from "../Botones/Boton"
 
 const QuantitySelector = ({ cantidad, stock, setCantidad }) => {
     const handleSumar = () => {

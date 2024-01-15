@@ -1,6 +1,6 @@
 
 
-const Boton = ({ children, className = "", onClick }) => {
+const Boton = ({ children, className = "", onClick, disabled =  false }) => {
 
     return (
     <button
