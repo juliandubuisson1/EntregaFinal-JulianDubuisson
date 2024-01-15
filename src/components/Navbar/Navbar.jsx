@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
-import Boton from "../Boton/Boton";
+import Boton from "../Botones/Boton";
 
 
 const links = [
@@ -30,22 +30,22 @@ const Navbar = () => {
     const { user, logout } = useContext(UserContext)
     
         return (
-        <header className="bg-purpura">
+        <header className="bg-gray-400">
             <div className="container m-auto py-6 flex justify-between items-center">
             
-            <img src={logo} alt="Logo" />
+            <img className="w-20" src={logo} alt="Logo" />
     
-            <nav className="flex gap-4">
-                {links.map((link) => (
+            <nav className="flex gap-4 text-teal-600">
+                {links.map((links) => (
     
                 <NavLink
-                    key={link.href}
-                    to={link.href}
+                    key={links.href}
+                    to={links.href}
                     className={({ isActive }) => (
-                    `text-lg uppercase font-semibold ${isActive ? "text-purple-400" : "text-white"}`
+                    `text-lg uppercase font-semibold ${isActive ? "text-teal-600" : "text-white"}`
                     )}
                 >
-                    {link.label}
+                    {links.label}
                 </NavLink>
     
                 ))}

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import Boton from "../Boton/Boton";
+import Boton from "../Botones/Boton";
 import trashIcon from "../../assets/trash.svg";
 import { UserContext } from "../../context/UserContext";
 import { Link } from "react-router-dom";
