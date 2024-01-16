@@ -4,6 +4,8 @@ import Boton from "../Botones/Boton";
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import QuantitySelector from "./QuantitySelector"
+import ColorSelector from "./ColorSelector"
+import OzSelector from "./OzSelector";
 
 
 
@@ -49,6 +51,12 @@ return (
                             stock={item.stock}
                             setCantidad={ setCantidad }
                         />          
+                        <OzSelector
+
+                            cantidad={cantidad}
+                            stock={item.stock}
+                            setCantidad={setCantidad}
+                        />
                         <Boton onClick={handleAgregar} disabled={item.stock === 0} className="bg-teal-600">Agregar al carrito</Boton>
                         </>
                 }
